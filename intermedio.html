@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Control Panel</title>
+</head>
+<body>
+    <label for="messageInput">Enter Message:</label>
+    <input type="text" id="messageInput">
+    <button onclick="sendMessage()">Send Message</button>
+
+    <label for="codeInput">Enter Code:</label>
+    <textarea id="codeInput"></textarea>
+    <button onclick="executeCode()">Execute Code</button>
+
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+            console.log(`Message: ${message}`);
+            // You can add code here to send 'message' to Discord
+        }
+
+        function executeCode() {
+            const code = document.getElementById('codeInput').value;
+            try {
+                eval(code);
+                console.log('Code executed successfully.');
+                // You can add code here to send a success message to Discord
+            } catch (error) {
+                console.error('Error executing code:', error);
+                // You can add code here to send the error message to Discord
+            }
+        }
+    </script>
+</body>
+</html>
